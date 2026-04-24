@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioGen AI - Your Perfect Instagram Bio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <style>
+        body { font-family: sans-serif; background-color: #f8f8f8; color: #333; }
+        .container { max-width: 768px; }
+        button { transition: background-color 0.3s ease; }
+        button:hover { @apply bg-blue-600; }
+        textarea { resize: vertical; min-height: 80px; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="container bg-white rounded-lg shadow-xl p-8 space-y-6">
+        <h1 class="text-4xl font-extrabold text-blue-700 text-center mb-6">BioGen AI ✨</h1>
+        <p class="text-lg text-center text-gray-700">Craft your perfect Instagram bio with AI instanty.</p>
+        
+        <div class="space-y-4">
+            <div>
+                <label for="keywords" class="block text-sm font-medium text-gray-800 mb-1">Keywords (e.g., entrepreneur, travel, fitness):</label>
+                <input type="text" id="keywords" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter comma-separated keywords">
+            </div>
+            <div>
+                <label for="niche" class="block text-sm font-medium text-gray-800 mb-1">Niche (e.g., fashion blogger, tech enthusiast):</label>
+                <input type="text" id="niche" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Describe your niche">
+            </div>
+            <div>
+                <label for="tone" class="block text-sm font-medium text-gray-800 mb-1">Desired Tone (e.g., witty, professional, playful):</label>
+                <input type="text" id="tone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Choose a tone">
+            </div>
+        </div>
+        
+        <button id="generateBio" class="w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-md text-xl hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            Generate Bio ($4.99)
+        </button>
+
+        <div id="outputSection" class="hidden mt-6 bg-blue-50 p-6 rounded-md border border-blue-200">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Your New Bio:</h3>
+            <textarea id="generatedBio" rows="4" class="w-full p-3 border border-blue-300 rounded-md bg-white text-gray-900 focus:outline-none" readonly></textarea>
+            <button class="mt-4 w-full bg-green-500 text-white font-bold py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none">Copy Bio</button>
+        </div>
+
+        <p class="text-center text-gray-500 text-xs mt-6">Powered by APEX AI</p>
+    </div>
+    <script>
+        // Placeholder for future JavaScript integration (e.g., API calls, Stripe)
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateBtn = document.getElementById('generateBio');
+            const outputSection = document.getElementById('outputSection');
+            const generatedBio = document.getElementById('generatedBio');
+
+            generateBtn.addEventListener('click', () => {
+                // In a real app, this would trigger an API call and Stripe checkout
+                // For demo, we'll just show the output section with a dummy bio
+                generatedBio.value = "✨ Unlocking potential | Empowering creators | Lover of coffee & code. DM for collabs! #AIInspired #Innovate";
+                outputSection.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
